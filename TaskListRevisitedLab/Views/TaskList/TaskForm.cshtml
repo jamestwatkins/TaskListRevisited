@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "TaskForm";
+}
+
+<h1>Add a Task</h1>
+
+<form action="/TaskList/AddTask" method="post" class="form-control">
+
+   
+    <input type="text" name="Description" placeholder="Task" />
+    <input type="date" name="DueDate" min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+    <input type="hidden" name="Completed" value="false" /> 
+    <input type="submit" value="Add Task" />
+
+</form>
+
+@Html.ValidationSummary();
